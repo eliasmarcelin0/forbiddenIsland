@@ -1,6 +1,11 @@
 package edu.up.cs301.tictactoe.players;
 
+import static edu.up.cs301.game.GameFramework.utilities.Logger.context;
+
 import android.view.View;
+import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import edu.up.cs301.game.GameFramework.GameMainActivity;
 import edu.up.cs301.game.GameFramework.infoMessage.GameInfo;
@@ -34,31 +39,48 @@ public class HumanPlayer extends GameHumanPlayer implements View.OnClickListener
     public void setAsGui(GameMainActivity activity) {
 
     }
-/*
+
     @Override
     public void onClick(View view) {
         //clear text from multiline edit text
+        Button RunTest = new Button();
+
+        //creating an instance and a copy of that instance
         GameState firstInstance = new GameState();
-        GameState secondInstance = new = GameState(firstInstance);
+        GameState secondInstance = new GameState(firstInstance);
+
+        //calling all the action methods on the firstInstance and printing what they did
         firstInstance.move();
         //multiline edit text about move
-        //(e.g., “Player 1 has moved his pawn from position 10 to position 14.”
         //edit text = edit text + ;
+        System.out.print("Player one moved");
+
         firstInstance.shoreUp();
         //edit text = edit text + ;
+        System.out.print("Player one shored up");
+
         firstInstance.captureTreasure();
         //edit text = edit text + ;
+        System.out.print("Player one capture a treasure");
+
         firstInstance.giveCard();
         //edit text = edit text + ;
+        System.out.print("Player one gave a card away");
+
         firstInstance.drawTreasure();
         //edit text = edit text + ;
+        System.out.print("Player one drew a treasure card");
+
         firstInstance.drawFlood();
         //edit text = edit text + ;
+        System.out.print("Player one drew a flood card");
+
+        //creating a third instance and a copy of that instance
         GameState thirdInstance = new GameState();
-        GameState fourthInstance = new GameState();
-        fourthInstance = GameState(thirdInstance);
-        toString(thirdInstance);
-        toString(fourthInstance);
-        //edit text = edit text + ;
-    }*/
+        GameState fourthInstance = new GameState(thirdInstance);
+
+        //calling the toString method on both instances to check they are the same
+        thirdInstance.toString();
+        fourthInstance.toString();
+    }
 }
