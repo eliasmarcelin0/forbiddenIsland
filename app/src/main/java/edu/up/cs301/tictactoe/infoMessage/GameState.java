@@ -95,6 +95,20 @@ public class GameState extends edu.up.cs301.game.GameFramework.infoMessage.GameS
         actionChoices = other.actionChoices;
     }
 
+    @Override
+    public String toString(){
+        return "Turn = "+yourTurn+
+                " Flood = "+floodMeter+
+                " Remaining Actions = "+actionsRemaining+
+                " Tile State = "+tileState+
+                " Treasure Count = "+treasureCount+
+                " Earth Stone Cards = "+numEarthStoneCards+
+                " Fire Crystal Cards = "+numFireCrystalCards+
+                " Wind Statue Cards = "+numWindStatueCards+
+                " Ocean Chalice Cards = "+numOceanChaliceCards+
+                " Action Choices = "+actionChoices;
+    }
+
 
     //game actions
     /*
