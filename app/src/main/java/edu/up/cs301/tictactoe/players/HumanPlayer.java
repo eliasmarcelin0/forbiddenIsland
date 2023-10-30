@@ -4,6 +4,7 @@ package edu.up.cs301.tictactoe.players;
 
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 import edu.up.cs301.game.GameFramework.GameMainActivity;
 import edu.up.cs301.game.GameFramework.infoMessage.GameInfo;
@@ -63,7 +64,6 @@ public class HumanPlayer extends GameHumanPlayer implements View.OnClickListener
         //clear text from multiline edit text
         Button RunTest = new Button();
         //editText.setText("big_text_description_here");
-
     }
 
 

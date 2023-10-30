@@ -104,6 +104,9 @@ public abstract class GameMainActivity extends Activity implements
      * GameMainActivity that implements the following methods.
      * --------------------------------------------------------------------
      */
+
+    public abstract EditText performGameActivity();
+
     /**
      * Creates a default, game-specific configuration for the current game.
      *

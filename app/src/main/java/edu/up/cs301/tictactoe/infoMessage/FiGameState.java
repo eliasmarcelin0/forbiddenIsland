@@ -127,14 +127,6 @@ public class FiGameState extends edu.up.cs301.game.GameFramework.infoMessage.Gam
 
     }
 
-
-    // instance variables
-
-
-    // other class variables
-    Tile[] board;
-    private HumanPlayer humanPlayer; // player reference
-
     FiGameState firstInstance = new FiGameState();
 
     /** game actions will probably make a new class for these moves */
