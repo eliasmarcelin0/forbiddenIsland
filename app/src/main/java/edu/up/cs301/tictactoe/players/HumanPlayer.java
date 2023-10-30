@@ -1,10 +1,12 @@
-package edu.up.cs301.game.GameFramework.players;
+package edu.up.cs301.tictactoe.players;
 
 import android.view.View;
 
 import edu.up.cs301.game.GameFramework.GameMainActivity;
 import edu.up.cs301.game.GameFramework.infoMessage.GameInfo;
 import edu.up.cs301.game.GameFramework.players.GameHumanPlayer;
+import android.widget.EditText;
+
 
 public class HumanPlayer extends GameHumanPlayer {
     /**
