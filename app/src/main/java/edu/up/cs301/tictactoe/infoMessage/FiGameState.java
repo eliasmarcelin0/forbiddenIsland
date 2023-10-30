@@ -141,16 +141,17 @@ public class FiGameState extends edu.up.cs301.game.GameFramework.infoMessage.Gam
     public boolean move(int tile){
         // check if tile is empty
         if(board[tile].getValue() == Tile.Value.EMPTY){
+            //humanPlayer.getPlayerId();
             return true;
-            humanPlayer.getPlayerId();
+
         }
         else
             return false;
     }
 }
     public boolean shoreUp(int tile){
-        // if tile level is less than 5
-        if(board[tile].getLevel()){
+        // if tile level is less than 5 or no actions
+        if(board[tile].getLevel() >= 5 || actionsRemaining){
             return false;
         }
         else if(actionsRemaining < 1){

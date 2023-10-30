@@ -15,10 +15,16 @@ public class MainActivity extends GameMainActivity {
         FiGameState secondInstance = new FiGameState(firstInstance);
 
         //calling all the action methods on the firstInstance and printing what they did
-        firstInstance.move(5);
+
         //multiline edit text about move
         //edit text = edit text + ;
-        System.out.print("Player one moved");
+        if (firstInstance.move(5) == true) {
+            System.out.print("Player one moved");
+        }
+        else {
+
+        }
+
 
         firstInstance.shoreUp(4);
         //edit text = edit text + ;
