@@ -151,10 +151,17 @@ public class GameState extends edu.up.cs301.game.GameFramework.infoMessage.GameS
     public String toString(){
 
         String result = "Player's Turn: ";
-        if (whoseTurn == 0) {
-            result += "Red's turn";
-        } else {
-            result += "Black's turn";
+        if ([playerTurn] == 1) {
+            result += "Player 1's Turn";
+        } else if (playerTurn == 2) {
+            result += "Player 2's Turn";
+
+        }
+        else if (playerTurn == 3) {
+            result += "Player 3's Turn";
+        }
+        else {
+            result += "Player 4's Turn";
         }
         result += "\n ";
 
