@@ -34,7 +34,7 @@ public class GameState extends edu.up.cs301.game.GameFramework.infoMessage.GameS
 
     //tile names for board and possible flood cards
 
-    /** Default constructor for thed game state */
+    /** Default constructor for the game state */
     public GameState(){
         yourTurn = true;
         floodMeter = 0;
