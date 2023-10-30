@@ -1,18 +1,22 @@
-package edu.up.cs301;
-import android.graphics.Color;
+package edu.up.cs301.tictactoe.infoMessage;
 
+import android.graphics.Color;
 import java.util.ArrayList;
+import java.util.Hashtable;
 
 public class GameState extends edu.up.cs301.game.GameFramework.infoMessage.GameState {
     Color playerPawn;
     boolean yourTurn;
-    //private gameStage;
     int floodMeter;
+
     //private discardFlood;
     //private discardTreasure;
+    //private gameStage;
 
-    //ArrayList<> hand;
+    //arraylist to keep track of cards in hand
+    ArrayList<Integer> hand;
 
+    //possible actions on turn
     final int move = 1;
     final int shoreUp = 2;
     final int giveCard = 3;
@@ -20,6 +24,7 @@ public class GameState extends edu.up.cs301.game.GameFramework.infoMessage.GameS
     final int drawTreasure = 5;
     final int drawFlood = 6;
 
+    //tile names for board and possible flood cards
     final int FoolsLandingTile = 1;
     final int BronzeGateTile = 2;
     final int GoldGateTile = 3;
@@ -44,4 +49,20 @@ public class GameState extends edu.up.cs301.game.GameFramework.infoMessage.GameS
     final int MistyMarshTile = 22;
     final int BreakersBridgeTile = 23;
     final int HowlingGardenTile = 24;
+
+    //possible treasure cards
+    final int earthStone = 25;
+    final int fireCrystal = 26;
+    final int windStatue = 27;
+    final int oceanChalice = 28;
+    final int sandbag = 29;
+    final int helicopterPad = 30;
+    final int watersRise = 31;
+
+    //variable for the state of tiles; 1-good, 2-flooded, 3-sunk
+    int tileState;
+
+    //hashtable that holds tile name and tile state
+    //Hashtable<Integer, Integer>();
+
 }
