@@ -5,17 +5,6 @@ import java.util.ArrayList;
 import java.util.Hashtable;
 
 public class GameState extends edu.up.cs301.game.GameFramework.infoMessage.GameState {
-    Color playerPawn;
-    boolean yourTurn;
-    int floodMeter;
-
-    //private discardFlood;
-    //private discardTreasure;
-    //private gameStage;
-
-    //arraylist to keep track of cards in hand
-    ArrayList<Integer> hand;
-
     //possible actions on turn
     final int move = 1;
     final int shoreUp = 2;
@@ -23,6 +12,9 @@ public class GameState extends edu.up.cs301.game.GameFramework.infoMessage.GameS
     final int captureTreasure = 4;
     final int drawTreasure = 5;
     final int drawFlood = 6;
+
+    //arraylist to keep track of cards in hand
+    ArrayList<Integer> hand = new ArrayList<Integer>();
 
     //tile names for board and possible flood cards
     final int FoolsLandingTile = 1;
@@ -59,10 +51,21 @@ public class GameState extends edu.up.cs301.game.GameFramework.infoMessage.GameS
     final int helicopterPad = 30;
     final int watersRise = 31;
 
-    //variable for the state of tiles; 1-good, 2-flooded, 3-sunk
-    int tileState;
-
     //hashtable that holds tile name and tile state
     //Hashtable<Integer, Integer>();
 
+    Color playerPawn;
+    boolean yourTurn;
+    int floodMeter;
+    int actionsRemaining;
+    //variable for the state of tiles; 1-good, 2-flooded, 3-sunk
+    int tileState;
+
+
+    public GameState(){
+        yourTurn = true;
+        floodMeter = 0;
+        actionsRemaining = 3;
+        tileState = 1;
+    }
 }
