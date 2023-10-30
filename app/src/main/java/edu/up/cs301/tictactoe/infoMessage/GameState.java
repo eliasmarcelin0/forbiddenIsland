@@ -67,7 +67,7 @@ public class GameState extends edu.up.cs301.game.GameFramework.infoMessage.GameS
     int numWindStatueCards;
     int numOceanChaliceCards;
 
-
+    //default constructor
     public GameState(){
         yourTurn = true;
         floodMeter = 0;
@@ -80,6 +80,8 @@ public class GameState extends edu.up.cs301.game.GameFramework.infoMessage.GameS
         numOceanChaliceCards = 0;
         actionChoices = 1;
     }
+
+    //copy constructor
     public GameState(GameState other){
         yourTurn = other.yourTurn;
         floodMeter = other.floodMeter;
@@ -92,4 +94,64 @@ public class GameState extends edu.up.cs301.game.GameFramework.infoMessage.GameS
         numOceanChaliceCards = other.numOceanChaliceCards;
         actionChoices = other.actionChoices;
     }
+
+
+    //game actions
+    /*
+    public void move(){
+        if(check if move is illegal){
+            return false;
+        }
+        else if(OnClick() is adjacent){
+            move to Onclick() position;
+            return true;
+        }
+    }
+    public void shoreUp(){
+        if(check if move is illegal){
+            return false;
+        }
+        else if(actionsRemaining < 1){
+            break;
+            return true;
+        }
+    }
+    public void giveCard(){
+        if(check if move is illegal){
+            return false;
+        }
+        else{
+            //choose card from array, remove, and add to another player's hand array'
+            return true;
+        }
+    }
+    public void captureTreasure(){
+        if(check if move is illegal){
+            return false;
+        }
+        else if(treasureCount == 4){
+            //remove all 4 treasure cards from player's deck
+            //move treasure to display on layout
+            treasureCount++;
+            return true;
+        }
+    }
+    public boolean drawTreasure(){
+        if(check if move is illegal){
+            return false;
+        }
+        else{
+            //hand.add(); add treasure card to array of your deck
+            return true;
+        }
+    }
+    public boolean drawFlood(){
+        if(check if move is illegal){
+            return false;
+        }
+        else{
+            //hand.add() add flood card to array of your deck hand
+            return true;
+        }
+    }*/
 }
