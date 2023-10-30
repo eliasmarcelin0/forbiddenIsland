@@ -44,6 +44,7 @@ public class HumanPlayer extends GameHumanPlayer implements View.OnClickListener
     public void onClick(View view) {
         //clear text from multiline edit text
         Button RunTest = new Button();
+        //editText.setText("big_text_description_here");
 
         //creating an instance and a copy of that instance
         GameState firstInstance = new GameState();
