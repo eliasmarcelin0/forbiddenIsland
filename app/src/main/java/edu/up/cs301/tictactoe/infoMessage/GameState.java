@@ -9,14 +9,6 @@ import edu.up.cs301.tictactoe.Tile;
 public class GameState extends edu.up.cs301.game.GameFramework.infoMessage.GameState {
 
     /** delete and put into move class */
-    //possible actions on turn for actionChoices
-    final int drawTreasure = 1;
-    final int move = 2;
-    final int shoreUp = 3;
-    final int giveCard = 4;
-    final int captureTreasure = 5;
-    final int drawFlood = 6;
-
     //possible treasure cards
     final int earthStone = 25;
     final int fireCrystal = 26;
@@ -65,6 +57,7 @@ public class GameState extends edu.up.cs301.game.GameFramework.infoMessage.GameS
     int floodMeter;
     int actionsRemaining;
     int actionChoices;
+
     //variable for the state of tiles; 1-good, 2-flooded, 3-sunk
     int tileState;
     int treasureCount;
@@ -89,6 +82,5 @@ public class GameState extends edu.up.cs301.game.GameFramework.infoMessage.GameS
         for (int i = 0; i < 24; i++) {
                 board[i] = other.board[i];
         }
-
     }
 }
