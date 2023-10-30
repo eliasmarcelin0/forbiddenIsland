@@ -165,8 +165,6 @@ public class GameState extends edu.up.cs301.game.GameFramework.infoMessage.GameS
         }
         result += "\n ";
 
-        result += "Time Elapsed: " + timeElapsed + "\n ";
-
         for (int i = 0; i < 24; i++) {
             String board1 = "";
             switch (board[i].getValue()) {
@@ -187,7 +185,7 @@ public class GameState extends edu.up.cs301.game.GameFramework.infoMessage.GameS
         }
 
 
-        return "Turn = "+yourTurn+
+        return "Turn = "+playerTurn+
                 " Flood = "+floodMeter+
                 " Remaining Actions = "+actionsRemaining+
                 " Tile State = "+tileState+
