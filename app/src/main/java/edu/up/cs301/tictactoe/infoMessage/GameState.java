@@ -5,12 +5,12 @@ import java.util.ArrayList;
 import java.util.Hashtable;
 
 public class GameState extends edu.up.cs301.game.GameFramework.infoMessage.GameState {
-    //possible actions on turn
-    final int move = 1;
-    final int shoreUp = 2;
-    final int giveCard = 3;
-    final int captureTreasure = 4;
-    final int drawTreasure = 5;
+    //possible actions on turn for actionChoices
+    final int drawTreasure = 1;
+    final int move = 2;
+    final int shoreUp = 3;
+    final int giveCard = 4;
+    final int captureTreasure = 5;
     final int drawFlood = 6;
 
     //arraylist to keep track of cards in hand
@@ -58,8 +58,14 @@ public class GameState extends edu.up.cs301.game.GameFramework.infoMessage.GameS
     boolean yourTurn;
     int floodMeter;
     int actionsRemaining;
+    int actionChoices;
     //variable for the state of tiles; 1-good, 2-flooded, 3-sunk
     int tileState;
+    int treasureCount;
+    int numEarthStoneCards;
+    int numFireCrystalCards;
+    int numWindStatueCards;
+    int numOceanChaliceCards;
 
 
     public GameState(){
@@ -67,5 +73,23 @@ public class GameState extends edu.up.cs301.game.GameFramework.infoMessage.GameS
         floodMeter = 0;
         actionsRemaining = 3;
         tileState = 1;
+        treasureCount = 0;
+        numEarthStoneCards = 0;
+        numFireCrystalCards = 0;
+        numWindStatueCards = 0;
+        numOceanChaliceCards = 0;
+        actionChoices = 1;
+    }
+    public GameState(GameState other){
+        yourTurn = other.yourTurn;
+        floodMeter = other.floodMeter;
+        actionsRemaining = other.actionsRemaining;
+        tileState = other.tileState;
+        treasureCount = other.treasureCount;
+        numEarthStoneCards = other.numEarthStoneCards;
+        numFireCrystalCards = other.numFireCrystalCards;
+        numWindStatueCards = other.numWindStatueCards;
+        numOceanChaliceCards = other.numOceanChaliceCards;
+        actionChoices = other.actionChoices;
     }
 }
