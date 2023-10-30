@@ -1,51 +1,34 @@
 package edu.up.cs301.tictactoe.infoMessage;
 
 import android.graphics.Color;
-import java.util.ArrayList;
-import java.util.Hashtable;
 
 import edu.up.cs301.tictactoe.Tile;
+import edu.up.cs301.tictactoe.players.HumanPlayer;
 
-public class GameState extends edu.up.cs301.game.GameFramework.infoMessage.GameState {
+public class FiGameState extends edu.up.cs301.game.GameFramework.infoMessage.GameState {
 
-    /** MOVE TO NEW CLASS? For card distrbt. */
-    //arraylist to keep track of cards in hand
-    ArrayList<Integer> hand = new ArrayList<Integer>();
-    //possible treasure cards
-    final int earthStone = 25;
-    final int fireCrystal = 26;
-    final int windStatue = 27;
-    final int oceanChalice = 28;
-    final int sandbag = 29;
-    final int helicopterPad = 30;
-    final int watersRise = 31;
-
-    //instance variables
-     Tile[] board;
-    //hashtable that holds tile name and tile state
-    //Hashtable<Integer, Integer>();
-
+    //instance variables  need to go over if we need all of them
     Color playerPawn;
     int playerTurn;
     int floodMeter; // delete
     int actionsRemaining;
     int actionChoices;
 
-    //variable for the state of tiles; 1-good, 2-flooded, 3-sunk
-    int tileState;
+
     int treasureCount;
     int numEarthStoneCards;
     int numFireCrystalCards;
     int numWindStatueCards;
     int numOceanChaliceCards;
 
-    //tile names for board and possible flood cards
+    // other class variables
+    Tile[] board;
+    private HumanPlayer humanPlayer; // player reference
 
     /** Default constructor for the game state */
-    public GameState(){
-        playerTurn = 1 // sets player 1 as start of game;
+    public FiGameState(){
+        playerTurn = 1; // sets player 1 as start of game;
         actionsRemaining = 3;
-        tileState = 1;
         treasureCount = 0;
         numEarthStoneCards = 0;
         numFireCrystalCards = 0;
@@ -62,11 +45,10 @@ public class GameState extends edu.up.cs301.game.GameFramework.infoMessage.GameS
     }
 
     /** Copy Constructor */
-    public GameState(GameState other){
+    public FiGameState(FiGameState other){
         playerTurn = other.playerTurn;
         floodMeter = other.floodMeter;
         actionsRemaining = other.actionsRemaining;
-        tileState = other.tileState;
         treasureCount = other.treasureCount;
         numEarthStoneCards = other.numEarthStoneCards;
         numFireCrystalCards = other.numFireCrystalCards;
@@ -80,68 +62,15 @@ public class GameState extends edu.up.cs301.game.GameFramework.infoMessage.GameS
         }
     }
 
-    /** game actions */
-    public int move(int tile){
-        // check if tile is empty
-        if(board[i].getValue() == Tile.Value.EMPTY){
-            return true;
-        }
-        else
-            return false;
-        }
-    }
-    public void shoreUp(int tile){
-        // if tile level is less than 5
-        if(board[i].getLevel()){
-            return false;
-        }
-        else if(actionsRemaining < 1){
-            break;
-            return true;
-        }
-    }
-    public void giveCard(int player){
-        if(check if move is illegal){
-            return false;
-        }
-        else{
-            //choose card from array, remove, and add to another player's hand array'
-            return true;
-        }
-    }
-    // finish captureTreasure need to setup four elements for tiles
-    /**
-    public void captureTreasure(int tile){
-        if(check if move is illegal){
-            return false;
-        }
-        else if(treasureCount == 4){
-            //remove all 4 treasure cards from player's deck
-            //move treasure to display on layout
-            treasureCount++;
-            return true;
-        }
-    }
-     */
+    /** changeTurn */
+    public void changeTurn() {
+        // if playerTurn and then increment player turn
+        if (playerTurn == humanPlayer.getPlayerId()) {}
 
-    public boolean drawTreasure(playerTurn){
-        if(check if move is illegal){
-            return false;
-        }
-        else{
-            //hand.add(); add treasure card to array of your deck
-            return true;
-        }
+
+
     }
-    public boolean drawFlood(){
-        if(check if move is illegal){
-            return false;
-        }
-        else{
-            //hand.add() add flood card to array of your deck hand
-            return true;
-        }
-    } // end of moves
+
 
     /**
      * Turns all board data into one long string
@@ -151,7 +80,7 @@ public class GameState extends edu.up.cs301.game.GameFramework.infoMessage.GameS
     public String toString(){
 
         String result = "Player's Turn: ";
-        if ([playerTurn] == 1) {
+        if (playerTurn == 1) {
             result += "Player 1's Turn";
         } else if (playerTurn == 2) {
             result += "Player 2's Turn";
@@ -188,7 +117,6 @@ public class GameState extends edu.up.cs301.game.GameFramework.infoMessage.GameS
         return "Turn = "+playerTurn+
                 " Flood = "+floodMeter+
                 " Remaining Actions = "+actionsRemaining+
-                " Tile State = "+tileState+
                 " Treasure Count = "+treasureCount+
                 " Earth Stone Cards = "+numEarthStoneCards+
                 " Fire Crystal Cards = "+numFireCrystalCards+
@@ -198,6 +126,83 @@ public class GameState extends edu.up.cs301.game.GameFramework.infoMessage.GameS
 
 
     }
+
+
+    // instance variables
+
+
+    // other class variables
+    Tile[] board;
+    private HumanPlayer humanPlayer; // player reference
+
+    FiGameState firstInstance = new FiGameState();
+
+    /** game actions will probably make a new class for these moves */
+    public boolean move(int tile){
+        // check if tile is empty
+        if(board[tile].getValue() == Tile.Value.EMPTY){
+            return true;
+            humanPlayer.getPlayerId();
+        }
+        else
+            return false;
+    }
+}
+    public boolean shoreUp(int tile){
+        // if tile level is less than 5
+        if(board[tile].getLevel()){
+            return false;
+        }
+        else if(actionsRemaining < 1){
+            break;
+            return true;
+        }
+    }
+    // need to set up another player
+    /**
+     public boolean giveCard(int player){
+     if(check if move is illegal){
+     return false;
+     }
+     else{
+     //choose card from array, remove, and add to another player's hand array'
+     return true;
+     }
+     }
+     */
+    // finish captureTreasure need to setup four elements for tiles
+    /**
+     public void captureTreasure(int tile){
+     if(check if move is illegal){
+     return false;
+     }
+     else if(treasureCount == 4){
+     //remove all 4 treasure cards from player's deck
+     //move treasure to display on layout
+     treasureCount++;
+     return true;
+     }
+     }
+     */
+
+    public boolean drawTreasure(playerTurn){
+        if(){
+            return false;
+        }
+        else{
+            //hand.add(); add treasure card to array of your deck
+            return true;
+        }
+    }
+    public boolean drawFlood(){
+        if(check if move is illegal){
+            return false;
+        }
+        else{
+            //hand.add() add flood card to array of your deck hand
+            return true;
+        }
+    } // end of moves
 
 
 }

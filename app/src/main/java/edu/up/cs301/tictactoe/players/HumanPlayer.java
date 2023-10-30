@@ -1,21 +1,24 @@
 package edu.up.cs301.tictactoe.players;
 
-import static edu.up.cs301.game.GameFramework.utilities.Logger.context;
+//import static edu.up.cs301.game.GameFramework.utilities.Logger.context;
 
 import android.view.View;
 import android.widget.Button;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 
 import edu.up.cs301.game.GameFramework.GameMainActivity;
 import edu.up.cs301.game.GameFramework.infoMessage.GameInfo;
 import edu.up.cs301.game.GameFramework.players.GameHumanPlayer;
-import edu.up.cs301.tictactoe.infoMessage.GameState;
 
-import android.widget.EditText;
+import java.util.List;
 
 
 public class HumanPlayer extends GameHumanPlayer implements View.OnClickListener {
+
+    // instance variables
+    private List<Integer> hand; //arraylist to keep track of cards in hand
+    private int playerId; // to use for moves
+    private int actionsRemaining; // player gets 3 moves
+
     /**
      * constructor
      *
@@ -23,6 +26,8 @@ public class HumanPlayer extends GameHumanPlayer implements View.OnClickListener
      */
     public HumanPlayer(String name) {
         super(name);
+        playerId = 1;
+
     }
 
     @Override
@@ -40,48 +45,40 @@ public class HumanPlayer extends GameHumanPlayer implements View.OnClickListener
 
     }
 
+    /** Editing Player Hand */
+    public int getNumberOfCardsInHand() {
+        return hand.size();
+    }
+
+    public void addCardToHand(int card) {
+        hand.add(card);
+    }
+
+    public void removeCardFromHand(int card) {
+        hand.remove(Integer.valueOf(card)); // Remove by card ID
+    }
+
     @Override
     public void onClick(View view) {
         //clear text from multiline edit text
         Button RunTest = new Button();
         //editText.setText("big_text_description_here");
 
-        //creating an instance and a copy of that instance
-        GameState firstInstance = new GameState();
-        GameState secondInstance = new GameState(firstInstance);
-
-        //calling all the action methods on the firstInstance and printing what they did
-        firstInstance.move(5);
-        //multiline edit text about move
-        //edit text = edit text + ;
-        System.out.print("Player one moved");
-
-        firstInstance.shoreUp();
-        //edit text = edit text + ;
-        System.out.print("Player one shored up");
-
-        //firstInstance.captureTreasure();
-        //edit text = edit text + ;
-        //System.out.print("Player one capture a treasure");
-
-        firstInstance.giveCard();
-        //edit text = edit text + ;
-        System.out.print("Player one gave a card away");
-
-        firstInstance.drawTreasure();
-        //edit text = edit text + ;
-        System.out.print("Player one drew a treasure card");
-
-        firstInstance.drawFlood();
-        //edit text = edit text + ;
-        System.out.print("Player one drew a flood card");
-
-        //creating a third instance and a copy of that instance
-        GameState thirdInstance = new GameState();
-        GameState fourthInstance = new GameState(thirdInstance);
-
-        //calling the toString method on both instances to check they are the same
-        thirdInstance.toString();
-        fourthInstance.toString();
     }
+
+
+    /** SETTER METHODS */
+    public void setPlayerId(int playerId) {
+        this.playerId = playerId;
+    }
+
+    public void setActionsRemaining(int actionsRemaining) {
+        this.actionsRemaining = actionsRemaining;
+    }
+
+    /** GETTER METHODS */
+    public int getPlayerId() {return this.playerId;}
+    public int getActionsRemaining() {return this.actionsRemaining;}
+
+
 }
