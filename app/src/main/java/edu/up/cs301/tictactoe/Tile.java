@@ -5,12 +5,14 @@ public class Tile {
     // Instance Variables //
     private TileName tileName;
     private Value value;
+    private int level;
 
 
     /** Tile Cst */
     public Tile(TileName tileName) {
         this.value = Value.EMPTY;
         this.tileName = tileName;
+        this.level = 0;
     }
 
     // set Tile value
@@ -54,6 +56,7 @@ public class Tile {
      */
     public void revertTile() {
         setValue(Value.EMPTY);
+        setLevel(0);
 
     }//revertTile
 
@@ -63,13 +66,19 @@ public class Tile {
     // --- GETTER METHODS --- //
     ////////////////////////////
     public Value getValue() {return value;}//getValue
+    public int getLevel(int level) {return level;} //get Tile Level
     public TileName getTilename() {return tileName;}//getTilename
 
 
     ////////////////////////////
     // --- SETTER METHODS --- //
     ////////////////////////////
-    public void setValue(Value value) {this.value = value;}//setInTile
+
+
+    public void setValue(Value value) {this.value = value;} //set Tile Value
+    public void setLevel(int level) {this.level = level;} //set Tile Level
+    public void setTilename(TileName tileName) {this.tileName = tileName;} //set Tile Name
+
 
 
 }//Tile

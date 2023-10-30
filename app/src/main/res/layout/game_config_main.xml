@@ -11,10 +11,17 @@
         layout="@layout/game_config_tabhost" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/testButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button" />
+        android:layout_alignWithParentIfMissing="false"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="false"
+        android:layout_alignParentRight="false"
+        android:layout_alignParentBottom="false"
+        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="false"
+        android:text="Run Test" />
 
     <RelativeLayout
         android:layout_width="match_parent"

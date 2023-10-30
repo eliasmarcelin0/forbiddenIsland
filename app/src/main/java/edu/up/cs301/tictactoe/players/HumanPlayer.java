@@ -51,7 +51,7 @@ public class HumanPlayer extends GameHumanPlayer implements View.OnClickListener
         GameState secondInstance = new GameState(firstInstance);
 
         //calling all the action methods on the firstInstance and printing what they did
-        firstInstance.move();
+        firstInstance.move(5);
         //multiline edit text about move
         //edit text = edit text + ;
         System.out.print("Player one moved");
@@ -60,9 +60,9 @@ public class HumanPlayer extends GameHumanPlayer implements View.OnClickListener
         //edit text = edit text + ;
         System.out.print("Player one shored up");
 
-        firstInstance.captureTreasure();
+        //firstInstance.captureTreasure();
         //edit text = edit text + ;
-        System.out.print("Player one capture a treasure");
+        //System.out.print("Player one capture a treasure");
 
         firstInstance.giveCard();
         //edit text = edit text + ;
