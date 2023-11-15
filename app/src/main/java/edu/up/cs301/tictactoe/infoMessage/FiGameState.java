@@ -73,7 +73,7 @@ public class FiGameState extends edu.up.cs301.game.GameFramework.infoMessage.Gam
     public void changeTurn() {
         // if playerTurn and then increment player turn
         if (playerTurn == humanPlayer.getPlayerId()) {
-            {
+
         }
 
     }
