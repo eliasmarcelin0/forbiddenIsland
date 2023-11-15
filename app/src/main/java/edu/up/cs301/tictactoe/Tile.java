@@ -20,6 +20,7 @@ public class Tile {
         EMPTY,
         FULL,
         FLOODED,
+        SUNK
     }//Value
 
     // Enum for the names of the tiles
@@ -66,7 +67,7 @@ public class Tile {
     // --- GETTER METHODS --- //
     ////////////////////////////
     public Value getValue() {return value;}//getValue
-    public int getLevel(int level) {return level;} //get Tile Level
+    public int getLevel() {return level;} //get Tile Level
     public TileName getTilename() {return tileName;}//getTilename
 
 

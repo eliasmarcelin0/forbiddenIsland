@@ -17,22 +17,22 @@ public class moves {
 
     /** game actions will probably make a new class for these moves */
     public boolean move(int tile){
-        // check if tile is empty
+        // check if tile is empty, else tile can no be moved to
         if(board[tile].getValue() == Tile.Value.EMPTY){
+            //humanPlayer.getPlayerId();
             return true;
-            humanPlayer.getPlayerId();
         }
         else
             return false;
     }
 }
     public boolean shoreUp(int tile){
-        // if tile level is less than 5
-        if(board[tile].getLevel()){
+        // if tile level is less than 5 or no actions
+        if( board[tile].getLevel() >= 5 || actionsRemaining <= 0){
             return false;
         }
-        else if(actionsRemaining < 1){
-            break;
+        else {
+            board[tile].setLevel( board[tile].getLevel() + 1 );
             return true;
         }
     }
@@ -64,20 +64,25 @@ public class moves {
      */
 
     public boolean drawTreasure(playerTurn){
-        if(){
+
+        // if player has 5 cards or max amount of this card distrbt.
+        if(humanPlayer.getNumberOfCardsInHand() >= 5){
             return false;
         }
+
         else{
             //hand.add(); add treasure card to array of your deck
+            humanPlayer.addCardToHand(1);
             return true;
         }
     }
     public boolean drawFlood(){
-        if(check if move is illegal){
+        if(humanPlayer.getNumberOfCardsInHand() >= 5){
             return false;
         }
         else{
             //hand.add() add flood card to array of your deck hand
+            humanPlayer.addCardToHand(2);
             return true;
         }
     } // end of moves
