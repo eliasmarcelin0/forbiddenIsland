@@ -24,7 +24,7 @@
         android:text="Run Test" />
 
     <EditText
-        android:id="@+id/multiLineEditText)"
+        android:id="@+id/multiLineEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Run Test"
