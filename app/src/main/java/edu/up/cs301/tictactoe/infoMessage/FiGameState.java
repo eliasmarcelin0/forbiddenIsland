@@ -30,6 +30,7 @@ public class FiGameState extends edu.up.cs301.game.GameFramework.infoMessage.Gam
     /** Default constructor for the game state */
     public FiGameState(){
         playerTurn = 1; // sets player 1 as start of game;
+        playerId = 0;
         actionsRemaining = 3;
         treasureCount = 0;
         numEarthStoneCards = 0;
@@ -49,6 +50,7 @@ public class FiGameState extends edu.up.cs301.game.GameFramework.infoMessage.Gam
     /** Copy Constructor */
     public FiGameState(FiGameState other){
         playerTurn = other.playerTurn;
+        playerId = other.playerId;
         floodMeter = other.floodMeter;
         actionsRemaining = other.actionsRemaining;
         treasureCount = other.treasureCount;
@@ -141,7 +143,7 @@ public class FiGameState extends edu.up.cs301.game.GameFramework.infoMessage.Gam
     public boolean move(int tile){
         // check if tile is empty
         if(board[tile].getValue() == Tile.Value.EMPTY){
-            //humanPlayer.getPlayerId();
+            humanPlayer.getPlayerId();
             return true;
 
         }
