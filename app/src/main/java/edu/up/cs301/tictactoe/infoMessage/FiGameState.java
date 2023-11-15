@@ -13,7 +13,9 @@ public class FiGameState extends edu.up.cs301.game.GameFramework.infoMessage.Gam
     Color playerPawn;
     int playerTurn;
 
-    int playerId; // to use for moves
+
+
+    private int playerId; // to use for moves
     int floodMeter; // delete
     int actionsRemaining;
     int actionChoices;
@@ -51,16 +53,16 @@ public class FiGameState extends edu.up.cs301.game.GameFramework.infoMessage.Gam
 
     /** Copy Constructor */
     public FiGameState(FiGameState other){
-        playerTurn = other.playerTurn;
-        playerId = other.playerId;
-        floodMeter = other.floodMeter;
-        actionsRemaining = other.actionsRemaining;
-        treasureCount = other.treasureCount;
-        numEarthStoneCards = other.numEarthStoneCards;
-        numFireCrystalCards = other.numFireCrystalCards;
-        numWindStatueCards = other.numWindStatueCards;
-        numOceanChaliceCards = other.numOceanChaliceCards;
-        actionChoices = other.actionChoices;
+        this.playerTurn = other.playerTurn;
+        this.playerId = other.playerId;
+        this.floodMeter = other.floodMeter;
+        this.actionsRemaining = other.actionsRemaining;
+        this.treasureCount = other.treasureCount;
+        this.numEarthStoneCards = other.numEarthStoneCards;
+        this.numFireCrystalCards = other.numFireCrystalCards;
+        this.numWindStatueCards = other.numWindStatueCards;
+        this.numOceanChaliceCards = other.numOceanChaliceCards;
+        this.actionChoices = other.actionChoices;
 
         board = new Tile[24];
         for (int i = 0; i < 24; i++) {
@@ -71,7 +73,9 @@ public class FiGameState extends edu.up.cs301.game.GameFramework.infoMessage.Gam
     /** changeTurn */
     public void changeTurn() {
         // if playerTurn and then increment player turn
-        if (playerTurn == humanPlayer.getPlayerId()) {}
+        if (playerTurn == humanPlayer.getPlayerId()) {
+
+        }
 
     }
 
@@ -90,13 +94,13 @@ public class FiGameState extends edu.up.cs301.game.GameFramework.infoMessage.Gam
             result += "Player 2's Turn";
 
         }
-        else if (playerTurn == 3) {
-            result += "Player 3's Turn";
-        }
-        else {
-            result += "Player 4's Turn";
-        }
-        result += "\n ";
+        //else if (playerTurn == 3) {
+            //result += "Player 3's Turn";
+        //}
+        //else {
+            //result += "Player 4's Turn";
+        //}
+        //result += "\n ";
 
         for (int i = 0; i < 24; i++) {
             String board1 = "";
