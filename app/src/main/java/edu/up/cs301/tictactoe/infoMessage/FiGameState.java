@@ -13,8 +13,6 @@ public class FiGameState extends edu.up.cs301.game.GameFramework.infoMessage.Gam
     Color playerPawn;
     int playerTurn;
 
-
-
     private int playerId; // to use for moves
     int floodMeter; // delete
     int actionsRemaining;
@@ -42,6 +40,7 @@ public class FiGameState extends edu.up.cs301.game.GameFramework.infoMessage.Gam
         numWindStatueCards = 0;
         numOceanChaliceCards = 0;
         actionChoices = 1;
+        Pawn p1 = new Pawn();
 
         board = new Tile[24]; // Initialize board with all 24 places
 
@@ -63,6 +62,7 @@ public class FiGameState extends edu.up.cs301.game.GameFramework.infoMessage.Gam
         this.numWindStatueCards = other.numWindStatueCards;
         this.numOceanChaliceCards = other.numOceanChaliceCards;
         this.actionChoices = other.actionChoices;
+        this.p1 = other.p1;
 
         board = new Tile[24];
         for (int i = 0; i < 24; i++) {
@@ -74,7 +74,7 @@ public class FiGameState extends edu.up.cs301.game.GameFramework.infoMessage.Gam
     public void changeTurn() {
         // if playerTurn and then increment player turn
         if (playerTurn == humanPlayer.getPlayerId()) {
-
+            {
         }
 
     }
