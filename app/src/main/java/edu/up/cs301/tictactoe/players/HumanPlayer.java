@@ -25,6 +25,12 @@ public class HumanPlayer extends GameHumanPlayer implements View.OnClickListener
 
     private Button quitButton = null;
     private Button deckButton = null;
+    private Button drawTreasureButton = null;
+    private Button drawFloodButton = null;
+    private Button moveButton = null;
+    private Button shoreUpButton = null;
+    private Button discardButton = null;
+    private Button captureTreasureButton = null;
     private Button FOOLS_LANDING = null;
     private Button BRONZE_GATE = null;
     private Button GOLD_GATE = null;
@@ -49,12 +55,6 @@ public class HumanPlayer extends GameHumanPlayer implements View.OnClickListener
     private Button MISTY_MARSH = null;
     private Button BREAKERS_BRIDGE = null;
     private Button HOWLING_GARDEN = null;
-    private Button drawTreasureButton = null;
-    private Button drawFloodButton = null;
-    private Button moveButton = null;
-    private Button shoreUpButton = null;
-    private Button discardButton = null;
-    private Button captureTreasureButton = null;
     
     private GameMainActivity myActivity;
 
@@ -87,9 +87,16 @@ public class HumanPlayer extends GameHumanPlayer implements View.OnClickListener
         //layout resource for gui
         activity.setContentView(R.layout.fi_game_ui);
 
-        //initialize the widget member variables
+        //intializing action buttons
         this.quitButton = (Button)activity.findViewById(R.id.quitButton);
         this.deckButton = (Button)activity.findViewById(R.id.deckButton);
+        this.drawTreasureButton = (Button)activity.findViewById(R.id.drawTreasureButton);
+        this.drawFloodButton = (Button)activity.findViewById(R.id.drawFloodButton);
+        this.moveButton = (Button)activity.findViewById(R.id.moveButton);
+        this.shoreUpButton = (Button)activity.findViewById(R.id.shoreUpButton);
+        this.discardButton = (Button)activity.findViewById(R.id.discardButton);
+        this.captureTreasureButton = (Button)activity.findViewById(R.id.captureTreasureButton);
+        //intializing tile buttons
         this.FOOLS_LANDING = (Button)activity.findViewById(R.id.FOOLS_LANDING);
         this.BRONZE_GATE = (Button)activity.findViewById(R.id.BRONZE_GATE);
         this.GOLD_GATE = (Button)activity.findViewById(R.id.GOLD_GATE);
@@ -114,16 +121,16 @@ public class HumanPlayer extends GameHumanPlayer implements View.OnClickListener
         this.MISTY_MARSH = (Button)activity.findViewById(R.id.MISTY_MARSH);
         this.BREAKERS_BRIDGE = (Button)activity.findViewById(R.id.BREAKERS_BRIDGE);
         this.HOWLING_GARDEN = (Button)activity.findViewById(R.id.HOWLING_GARDEN);
-        this.drawTreasureButton = (Button)activity.findViewById(R.id.drawTreasureButton);
-        this.drawFloodButton = (Button)activity.findViewById(R.id.drawFloodButton);
-        this.moveButton = (Button)activity.findViewById(R.id.moveButton);
-        this.shoreUpButton = (Button)activity.findViewById(R.id.shoreUpButton);
-        this.discardButton = (Button)activity.findViewById(R.id.discardButton);
-        this.captureTreasureButton = (Button)activity.findViewById(R.id.captureTreasureButton);
 
-        //if a button is pressed call the onClickListener method
+        //if an action button is pressed call the onClickListener method
         quitButton.setOnClickListener(this);
         deckButton.setOnClickListener(this);
+        drawTreasureButton.setOnClickListener(this);
+        drawFloodButton.setOnClickListener(this);
+        moveButton.setOnClickListener(this);
+        shoreUpButton.setOnClickListener(this);
+        discardButton.setOnClickListener(this);
+        captureTreasureButton.setOnClickListener(this);
     }
 
     /** Editing Player Hand */
@@ -142,13 +149,25 @@ public class HumanPlayer extends GameHumanPlayer implements View.OnClickListener
     @Override
     public void onClick(View button) {
         if(button.getId() == R.id.quitButton){
-            game.sendAction();
+            game.sendAction(new GameOverAckAction(this));
         }
-        else if(button.getId() == R.id.deckButton){
+        else if(button.getId() == R.id.drawTreasureButton){
             game.sendAction(hand.drawTreasure(this));
         }
         else if(button.getId() == R.id.shoreUpButton){
             game.sendAction(FiGameState.shoreUp(FOOLS_LANDING));
+        }
+        else if(button.getId() == R.id.drawFloodButton){
+            game.sendAction(FiGameState.drawFlood(this));
+        }
+        else if(button.getId() == R.id.moveButton){
+            game.sendAction(FiGameState.move(FOOLS_LANDING));
+        }
+        else if(button.getId() == R.id.discardButton){
+            game.sendAction(FiGameState.discard(FOOLS_LANDING));
+        }
+        else if(button.getId() == R.id.captureTreasureButton){
+            game.sendAction(FiGameState.captureTreasure(FOOLS_LANDING));
         }
     }
 
