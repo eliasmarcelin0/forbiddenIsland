@@ -10,6 +10,8 @@ public class FiGameState extends edu.up.cs301.game.GameFramework.infoMessage.Gam
     //instance variables  need to go over if we need all of them
     Color playerPawn;
     int playerTurn;
+
+    int playerId; // to use for moves
     int floodMeter; // delete
     int actionsRemaining;
     int actionChoices;
@@ -28,6 +30,7 @@ public class FiGameState extends edu.up.cs301.game.GameFramework.infoMessage.Gam
     /** Default constructor for the game state */
     public FiGameState(){
         playerTurn = 1; // sets player 1 as start of game;
+        playerId = 0;
         actionsRemaining = 3;
         treasureCount = 0;
         numEarthStoneCards = 0;
@@ -47,6 +50,7 @@ public class FiGameState extends edu.up.cs301.game.GameFramework.infoMessage.Gam
     /** Copy Constructor */
     public FiGameState(FiGameState other){
         playerTurn = other.playerTurn;
+        playerId = other.playerId;
         floodMeter = other.floodMeter;
         actionsRemaining = other.actionsRemaining;
         treasureCount = other.treasureCount;
@@ -66,8 +70,6 @@ public class FiGameState extends edu.up.cs301.game.GameFramework.infoMessage.Gam
     public void changeTurn() {
         // if playerTurn and then increment player turn
         if (playerTurn == humanPlayer.getPlayerId()) {}
-
-
 
     }
 
@@ -129,11 +131,19 @@ public class FiGameState extends edu.up.cs301.game.GameFramework.infoMessage.Gam
 
     FiGameState firstInstance = new FiGameState();
 
+    //setter method
+    public void setPlayerId(int playerId) {
+        this.playerId = playerId;
+    }
+
+    //getter method
+    public int getPlayerId() {return this.playerId;}
+
     /** game actions will probably make a new class for these moves */
     public boolean move(int tile){
         // check if tile is empty
         if(board[tile].getValue() == Tile.Value.EMPTY){
-            //humanPlayer.getPlayerId();
+            humanPlayer.getPlayerId();
             return true;
 
         }
@@ -196,6 +206,4 @@ public class FiGameState extends edu.up.cs301.game.GameFramework.infoMessage.Gam
             return true;
         }
     } // end of moves
-
-
 }
