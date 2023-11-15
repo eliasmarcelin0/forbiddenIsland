@@ -13,13 +13,10 @@ public class FiGameState extends edu.up.cs301.game.GameFramework.infoMessage.Gam
     Color playerPawn;
     int playerTurn;
 
-
-
     private int playerId; // to use for moves
-    int floodMeter; // delete
+    int floodMeter;
     int actionsRemaining;
     int actionChoices;
-
 
     int treasureCount;
     int numEarthStoneCards;
@@ -109,11 +106,11 @@ public class FiGameState extends edu.up.cs301.game.GameFramework.infoMessage.Gam
                     board1 = "Tile: Empty";
                     break;
                 }
-                case FULL: {
+                case FLOODED: {
                     board1 = "Full";
                     break;
                 }
-                case FLOODED: {
+                case SUNK: {
                     board1 = "Flooded";
                     break;
                 }
@@ -144,7 +141,11 @@ public class FiGameState extends edu.up.cs301.game.GameFramework.infoMessage.Gam
     public void setPlayerId(int playerId) {
         this.playerId = playerId;
     }
+    public void setFloodMeter(int floodMeter) {
+        this.floodMeter = floodMeter;
+    }
 
     //getter method
     public int getPlayerId() {return this.playerId;}
+    public int getFloodMeter() {return this.floodMeter;}
 }

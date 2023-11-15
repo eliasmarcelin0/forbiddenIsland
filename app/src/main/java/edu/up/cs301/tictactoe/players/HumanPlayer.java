@@ -6,6 +6,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import edu.up.cs301.game.GameFramework.GameMainActivity;
 import edu.up.cs301.game.GameFramework.actionMessage.GameAction;
@@ -23,6 +24,8 @@ public class HumanPlayer extends GameHumanPlayer implements View.OnClickListener
     private List<Integer> hand; //arraylist to keep track of cards in hand
     private int actionsRemaining; // player gets 3 moves
 
+
+    private TextView floodViewTextView = null;
     private Button quitButton = null;
     private Button deckButton = null;
     private Button drawTreasureButton = null;
@@ -76,6 +79,7 @@ public class HumanPlayer extends GameHumanPlayer implements View.OnClickListener
     public void receiveInfo(GameInfo info) {
         if(info instanceof FiGameState){
             FiGameState gameState = (FiGameState) info;
+            this.floodViewTextView.setText(""+gameState.getFloodMeter());
         }
     }
 
@@ -88,6 +92,7 @@ public class HumanPlayer extends GameHumanPlayer implements View.OnClickListener
         activity.setContentView(R.layout.fi_game_ui);
 
         //intializing action buttons
+        this.floodViewTextView = (TextView)activity.findViewById(R.id.floodView);
         this.quitButton = (Button)activity.findViewById(R.id.quitButton);
         this.deckButton = (Button)activity.findViewById(R.id.deckButton);
         this.drawTreasureButton = (Button)activity.findViewById(R.id.drawTreasureButton);
