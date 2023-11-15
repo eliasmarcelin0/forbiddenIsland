@@ -17,18 +17,28 @@
                 android:id="@+id/quitButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="#D61515"
                 android:text="Quit" />
 
             <Button
                 android:id="@+id/deckButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="#009688"
                 android:text="Treasure Deck" />
+
+            <Button
+                android:id="@+id/floodMeter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#009688"
+                android:text="Flood Meter" />
 
             <edu.up.cs301.tictactoe.views.TTTSurfaceView
                 android:id="@+id/floodView"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                android:background="#004496" />
 
         </LinearLayout>
 
@@ -47,7 +57,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Button" />
+                    android:text="Button"
+
+                    />
 
                 <Button
                     android:id="@+id/BRONZE_GATE"

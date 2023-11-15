@@ -4,7 +4,7 @@ import edu.up.cs301.tictactoe.infoMessage.FiGameState;
 import edu.up.cs301.tictactoe.players.HumanPlayer;
 import edu.up.cs301.tictactoe.Tile;
 
-public class moves extends FiGameState{
+public class moves {
 
     // instance variables
 
