@@ -18,8 +18,8 @@ public class Tile {
     // set Tile value
     public enum Value {
         EMPTY,
-        FULL,
         FLOODED,
+        SUNK,
     }//Value
 
     // Enum for the names of the tiles
@@ -67,7 +67,7 @@ public class Tile {
     ////////////////////////////
     public Value getValue() {return value;}//getValue
     public int getLevel(int level) {return level;} //get Tile Level
-    public TileName getTilename() {return tileName;}//getTilename
+    public TileName getTileName() {return tileName;}//getTilename
 
 
     ////////////////////////////
@@ -77,7 +77,7 @@ public class Tile {
 
     public void setValue(Value value) {this.value = value;} //set Tile Value
     public void setLevel(int level) {this.level = level;} //set Tile Level
-    public void setTilename(TileName tileName) {this.tileName = tileName;} //set Tile Name
+    public void setTileName(TileName tileName) {this.tileName = tileName;} //set Tile Name
 
 
 

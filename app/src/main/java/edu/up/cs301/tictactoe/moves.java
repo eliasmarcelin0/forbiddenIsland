@@ -4,10 +4,9 @@ import edu.up.cs301.tictactoe.infoMessage.FiGameState;
 import edu.up.cs301.tictactoe.players.HumanPlayer;
 import edu.up.cs301.tictactoe.Tile;
 
-public class moves {
+public class moves extends FiGameState{
 
     // instance variables
-
 
     // other class variables
     Tile[] board;
@@ -32,22 +31,21 @@ public class moves {
             return false;
         }
         else if(actionsRemaining < 1){
-            break;
             return true;
         }
     }
     // need to set up another player
-    /**
      public boolean giveCard(int player){
      if(check if move is illegal){
      return false;
      }
      else{
+
      //choose card from array, remove, and add to another player's hand array'
      return true;
      }
      }
-     */
+
     // finish captureTreasure need to setup four elements for tiles
     /**
      public void captureTreasure(int tile){
@@ -61,7 +59,7 @@ public class moves {
      return true;
      }
      }
-     */
+
 
     public boolean drawTreasure(playerTurn){
         if(){
@@ -81,5 +79,5 @@ public class moves {
             return true;
         }
     } // end of moves
-
+        */
 }

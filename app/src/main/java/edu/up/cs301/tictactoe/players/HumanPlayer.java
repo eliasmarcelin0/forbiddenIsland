@@ -17,7 +17,6 @@ public class HumanPlayer extends GameHumanPlayer implements View.OnClickListener
 
     // instance variables
     private List<Integer> hand; //arraylist to keep track of cards in hand
-    private int playerId; // to use for moves
     private int actionsRemaining; // player gets 3 moves
 
     /**
@@ -27,8 +26,6 @@ public class HumanPlayer extends GameHumanPlayer implements View.OnClickListener
      */
     public HumanPlayer(String name) {
         super(name);
-        playerId = 1;
-
     }
 
     @Override
@@ -68,16 +65,12 @@ public class HumanPlayer extends GameHumanPlayer implements View.OnClickListener
 
 
     /** SETTER METHODS */
-    public void setPlayerId(int playerId) {
-        this.playerId = playerId;
-    }
 
     public void setActionsRemaining(int actionsRemaining) {
         this.actionsRemaining = actionsRemaining;
     }
 
     /** GETTER METHODS */
-    public int getPlayerId() {return this.playerId;}
     public int getActionsRemaining() {return this.actionsRemaining;}
 
 
