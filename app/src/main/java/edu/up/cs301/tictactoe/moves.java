@@ -12,14 +12,23 @@ public class moves extends FiGameState {
     Tile[] board;
     private HumanPlayer humanPlayer; // player reference
 
-    FiGameState firstInstance = new FiGameState();
 
     /** game actions will probably make a new class for these moves */
-    public boolean move(int tile){
+    public boolean move(int tile, FiGameState gamestate){
         // check if tile is empty
-        if(board[tile].getValue() == Tile.Value.EMPTY){
-            return true;
-            humanPlayer.getPlayerId();
+        if(board[tile].getTileName() != board[tile].getTileName())
+        {
+            if(board[tile].getTileName() = board[tile].(above))
+            {
+                pawn = board[tile].(above);
+                return true;
+            }
+            if(board[tile].getTileName() = board[tile].(below))
+            {
+                pawn = board[tile].(below);
+                return true;
+            }
+
         }
         else
             return false;
