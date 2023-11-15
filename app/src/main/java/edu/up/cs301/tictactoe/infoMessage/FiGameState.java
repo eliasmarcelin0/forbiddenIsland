@@ -1,11 +1,13 @@
 package edu.up.cs301.tictactoe.infoMessage;
 
 import android.graphics.Color;
+import android.view.View;
+import android.widget.Button;
 
 import edu.up.cs301.tictactoe.Tile;
 import edu.up.cs301.tictactoe.players.HumanPlayer;
 
-public class FiGameState extends edu.up.cs301.game.GameFramework.infoMessage.GameState {
+public class FiGameState extends edu.up.cs301.game.GameFramework.infoMessage.GameState implements View.OnClickListener {
 
     //instance variables  need to go over if we need all of them
     Color playerPawn;
@@ -126,6 +128,9 @@ public class FiGameState extends edu.up.cs301.game.GameFramework.infoMessage.Gam
                 " Ocean Chalice Cards = "+numOceanChaliceCards+
                 " Action Choices = "+actionChoices;
 
+
+    }
+    public void onClick(View view) {
 
     }
 
