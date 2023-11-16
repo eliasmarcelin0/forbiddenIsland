@@ -14,13 +14,21 @@ import edu.up.cs301.game.GameFramework.infoMessage.GameInfo;
 import edu.up.cs301.game.GameFramework.players.GameHumanPlayer;
 import edu.up.cs301.game.R;
 import edu.up.cs301.tictactoe.infoMessage.FiGameState;
+import edu.up.cs301.tictactoe.animation.ForbiddenAnimationSurface;
 
 import java.util.List;
 
 
 public class HumanPlayer extends GameHumanPlayer implements View.OnClickListener, View.OnTouchListener {
 
-    // instance variables
+    /* --- INSTANCE VARIABLES --- */
+    private ForbiddenAnimationSurface surfaceView;
+    private int layoutId;
+
+    // The row and column the user clicks on the screen //
+    private int rowClick;
+    private int colClick;
+
     private List<Integer> hand; //arraylist to keep track of cards in hand
     private int actionsRemaining; // player gets 3 moves
 
@@ -66,8 +74,9 @@ public class HumanPlayer extends GameHumanPlayer implements View.OnClickListener
      *
      * @param name the name of the player
      */
-    public HumanPlayer(String name) {
+    public HumanPlayer(String name, int layoutId) {
         super(name);
+        this.layoutId = layoutId;
     }
 
     @Override
@@ -154,25 +163,25 @@ public class HumanPlayer extends GameHumanPlayer implements View.OnClickListener
     @Override
     public void onClick(View button) {
         if(button.getId() == R.id.quitButton){
-            game.sendAction(new GameOverAckAction(this));
+            //game.sendAction(new GameOverAckAction(this));
         }
         else if(button.getId() == R.id.drawTreasureButton){
-            game.sendAction(hand.drawTreasure(this));
+            //game.sendAction(hand.drawTreasure(this));
         }
         else if(button.getId() == R.id.shoreUpButton){
-            game.sendAction(FiGameState.shoreUp(FOOLS_LANDING));
+            //game.sendAction(FiGameState.shoreUp(FOOLS_LANDING));
         }
         else if(button.getId() == R.id.drawFloodButton){
-            game.sendAction(FiGameState.drawFlood(this));
+            //game.sendAction(FiGameState.drawFlood(this));
         }
         else if(button.getId() == R.id.moveButton){
-            game.sendAction(FiGameState.move(FOOLS_LANDING));
+            //game.sendAction(FiGameState.move(FOOLS_LANDING));
         }
         else if(button.getId() == R.id.discardButton){
-            game.sendAction(FiGameState.discard(FOOLS_LANDING));
+            //game.sendAction(FiGameState.discard(FOOLS_LANDING));
         }
         else if(button.getId() == R.id.captureTreasureButton){
-            game.sendAction(FiGameState.captureTreasure(FOOLS_LANDING));
+            //game.sendAction(FiGameState.captureTreasure(FOOLS_LANDING));
         }
     }
 

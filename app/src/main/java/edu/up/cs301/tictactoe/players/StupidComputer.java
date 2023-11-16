@@ -4,6 +4,7 @@ import edu.up.cs301.game.GameFramework.infoMessage.GameInfo;
 import edu.up.cs301.game.GameFramework.infoMessage.GameState;
 import edu.up.cs301.game.GameFramework.players.GameComputerPlayer;
 import edu.up.cs301.tictactoe.infoMessage.FiGameState;
+import edu.up.cs301.tictactoe.moves;
 
 public class StupidComputer extends GameComputerPlayer {
 
