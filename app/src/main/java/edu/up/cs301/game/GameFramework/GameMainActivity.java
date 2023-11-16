@@ -47,8 +47,7 @@ import edu.up.cs301.game.R;
  * @author Eric Imperio
  * @date Version 2020
  */
-public abstract class GameMainActivity extends Activity implements
-        View.OnClickListener {
+public abstract class GameMainActivity extends Activity implements View.OnClickListener {
     //Tag for Logging
     private static final String TAG = "GameMainActivity";
     /*
@@ -104,6 +103,9 @@ public abstract class GameMainActivity extends Activity implements
      * GameMainActivity that implements the following methods.
      * --------------------------------------------------------------------
      */
+
+    public abstract EditText performGameActivity();
+
     /**
      * Creates a default, game-specific configuration for the current game.
      *

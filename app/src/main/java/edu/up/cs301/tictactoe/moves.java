@@ -4,50 +4,58 @@ import edu.up.cs301.tictactoe.infoMessage.FiGameState;
 import edu.up.cs301.tictactoe.players.HumanPlayer;
 import edu.up.cs301.tictactoe.Tile;
 
-public class moves {
+public class moves extends FiGameState {
 
     // instance variables
-
 
     // other class variables
     Tile[] board;
     private HumanPlayer humanPlayer; // player reference
 
-    FiGameState firstInstance = new FiGameState();
 
     /** game actions will probably make a new class for these moves */
-    public boolean move(int tile){
-        // check if tile is empty, else tile can no be moved to
-        if(board[tile].getValue() == Tile.Value.EMPTY){
-            //humanPlayer.getPlayerId();
-            return true;
+    public boolean move(int tile, FiGameState gamestate){
+        // check if tile is empty
+        if(board[tile].getTileName() != board[tile].getTileName())
+        {
+            if(board[tile].getTileName() = board[tile].(above))
+            {
+                pawn = board[tile].(above);
+                return true;
+            }
+            if(board[tile].getTileName() = board[tile].(below))
+            {
+                pawn = board[tile].(below);
+                return true;
+            }
+
         }
-        else
+        else {
             return false;
+        }
     }
-}
+
     public boolean shoreUp(int tile){
-        // if tile level is less than 5 or no actions
-        if( board[tile].getLevel() >= 5 || actionsRemaining <= 0){
+        // if the shoreup is 5 or greater return or no actions
+        if(board[tile].getLevel() >= 5 || actionsRemaining < 1){
             return false;
         }
         else {
             board[tile].setLevel( board[tile].getLevel() + 1 );
             return true;
-        }
     }
     // need to set up another player
-    /**
-     public boolean giveCard(int player){
-     if(check if move is illegal){
-     return false;
+        
+        public boolean giveCard(int player){
+     if("check if move is illegal" == "fix this"){ 
+        return false;
      }
-     else{
+     else {
      //choose card from array, remove, and add to another player's hand array'
      return true;
+        }
      }
-     }
-     */
+     
     // finish captureTreasure need to setup four elements for tiles
     /**
      public void captureTreasure(int tile){
@@ -63,7 +71,7 @@ public class moves {
      }
      */
 
-    public boolean drawTreasure(playerTurn){
+    public boolean drawTreasure(playerTurn) {
 
         // if player has 5 cards or max amount of this card distrbt.
         if(humanPlayer.getNumberOfCardsInHand() >= 5){
@@ -75,7 +83,7 @@ public class moves {
             humanPlayer.addCardToHand(1);
             return true;
         }
-    }
+    } // end of drawTreasure
     public boolean drawFlood(){
         if(humanPlayer.getNumberOfCardsInHand() >= 5){
             return false;
@@ -85,6 +93,6 @@ public class moves {
             humanPlayer.addCardToHand(2);
             return true;
         }
-    } // end of moves
+    } // end of drawFlood
 
-}
+} // end of moves class

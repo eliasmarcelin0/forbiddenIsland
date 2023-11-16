@@ -1,19 +1,22 @@
 package edu.up.cs301.tictactoe.infoMessage;
 
 import android.graphics.Color;
+import android.view.View;
+import android.widget.Button;
 
 import edu.up.cs301.tictactoe.Tile;
 import edu.up.cs301.tictactoe.players.HumanPlayer;
 
-public class FiGameState extends edu.up.cs301.game.GameFramework.infoMessage.GameState {
+public class FiGameState extends edu.up.cs301.game.GameFramework.infoMessage.GameState implements View.OnClickListener {
 
     //instance variables  need to go over if we need all of them
     Color playerPawn;
     int playerTurn;
-    int floodMeter; // delete
+
+    private int playerId; // to use for moves
+    int floodMeter;
     int actionsRemaining;
     int actionChoices;
-
 
     int treasureCount;
     int numEarthStoneCards;
@@ -28,6 +31,7 @@ public class FiGameState extends edu.up.cs301.game.GameFramework.infoMessage.Gam
     /** Default constructor for the game state */
     public FiGameState(){
         playerTurn = 1; // sets player 1 as start of game;
+        playerId = 0;
         actionsRemaining = 3;
         treasureCount = 0;
         numEarthStoneCards = 0;
@@ -35,6 +39,7 @@ public class FiGameState extends edu.up.cs301.game.GameFramework.infoMessage.Gam
         numWindStatueCards = 0;
         numOceanChaliceCards = 0;
         actionChoices = 1;
+        Pawn p1 = new Pawn();
 
         board = new Tile[24]; // Initialize board with all 24 places
 
@@ -46,15 +51,17 @@ public class FiGameState extends edu.up.cs301.game.GameFramework.infoMessage.Gam
 
     /** Copy Constructor */
     public FiGameState(FiGameState other){
-        playerTurn = other.playerTurn;
-        floodMeter = other.floodMeter;
-        actionsRemaining = other.actionsRemaining;
-        treasureCount = other.treasureCount;
-        numEarthStoneCards = other.numEarthStoneCards;
-        numFireCrystalCards = other.numFireCrystalCards;
-        numWindStatueCards = other.numWindStatueCards;
-        numOceanChaliceCards = other.numOceanChaliceCards;
-        actionChoices = other.actionChoices;
+        this.playerTurn = other.playerTurn;
+        this.playerId = other.playerId;
+        this.floodMeter = other.floodMeter;
+        this.actionsRemaining = other.actionsRemaining;
+        this.treasureCount = other.treasureCount;
+        this.numEarthStoneCards = other.numEarthStoneCards;
+        this.numFireCrystalCards = other.numFireCrystalCards;
+        this.numWindStatueCards = other.numWindStatueCards;
+        this.numOceanChaliceCards = other.numOceanChaliceCards;
+        this.actionChoices = other.actionChoices;
+        this.p1 = other.p1;
 
         board = new Tile[24];
         for (int i = 0; i < 24; i++) {
@@ -65,9 +72,9 @@ public class FiGameState extends edu.up.cs301.game.GameFramework.infoMessage.Gam
     /** changeTurn */
     public void changeTurn() {
         // if playerTurn and then increment player turn
-        if (playerTurn == humanPlayer.getPlayerId()) {}
+        if (playerTurn == humanPlayer.getPlayerId()) {
 
-
+        }
 
     }
 
@@ -86,13 +93,13 @@ public class FiGameState extends edu.up.cs301.game.GameFramework.infoMessage.Gam
             result += "Player 2's Turn";
 
         }
-        else if (playerTurn == 3) {
-            result += "Player 3's Turn";
-        }
-        else {
-            result += "Player 4's Turn";
-        }
-        result += "\n ";
+        //else if (playerTurn == 3) {
+            //result += "Player 3's Turn";
+        //}
+        //else {
+            //result += "Player 4's Turn";
+        //}
+        //result += "\n ";
 
         for (int i = 0; i < 24; i++) {
             String board1 = "";
@@ -101,11 +108,11 @@ public class FiGameState extends edu.up.cs301.game.GameFramework.infoMessage.Gam
                     board1 = "Tile: Empty";
                     break;
                 }
-                case FULL: {
+                case FLOODED: {
                     board1 = "Full";
                     break;
                 }
-                case FLOODED: {
+                case SUNK: {
                     board1 = "Flooded";
                     break;
                 }
@@ -126,20 +133,18 @@ public class FiGameState extends edu.up.cs301.game.GameFramework.infoMessage.Gam
 
 
     }
+    public void onClick(View view) {
 
-    /** ===========================================================* /
-    /** game actions will probably make a new class for these moves
-     * WILL need a function to check turn
-     * */
+    }
 
-    public boolean move(int tile){
-        // check if tile is empty, else tile can no be moved to
-        if(board[tile].getValue() == Tile.Value.EMPTY){
-            //humanPlayer.getPlayerId();
-            return true;
-        }
-        else
-            return false;
+    FiGameState firstInstance = new FiGameState();
+
+    //setter method
+    public void setPlayerId(int playerId) {
+        this.playerId = playerId;
+    }
+    public void setFloodMeter(int floodMeter) {
+        this.floodMeter = floodMeter;
     }
 
     public boolean shoreUp(int tile){
