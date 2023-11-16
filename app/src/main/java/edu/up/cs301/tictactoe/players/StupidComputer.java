@@ -4,7 +4,7 @@ import edu.up.cs301.game.GameFramework.infoMessage.GameInfo;
 import edu.up.cs301.game.GameFramework.infoMessage.GameState;
 import edu.up.cs301.game.GameFramework.players.GameComputerPlayer;
 import edu.up.cs301.tictactoe.infoMessage.FiGameState;
-import edu.up.cs301.tictactoe.tttActionMessage.TTTMoveAction;
+import edu.up.cs301.tictactoe.moves;
 
 public class StupidComputer extends GameComputerPlayer {
 
@@ -28,7 +28,6 @@ public class StupidComputer extends GameComputerPlayer {
                 int randomNum = (int) (Math.random() * 4);
                 if(randomNum == 0){
                     game.sendAction(gameState.move());
-                    game.sendAction(new TTTMoveAction(this, 1, 1));
                 }
                 else if(randomNum == 1){
                     game.sendAction(gameState.shoreUp());

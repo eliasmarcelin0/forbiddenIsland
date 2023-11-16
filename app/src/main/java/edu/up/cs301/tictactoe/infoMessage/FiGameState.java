@@ -26,6 +26,7 @@ public class FiGameState extends edu.up.cs301.game.GameFramework.infoMessage.Gam
 
     // other class variables
     Tile[] board;
+
     private HumanPlayer humanPlayer; // player reference
 
     /** Default constructor for the game state */
@@ -68,16 +69,16 @@ public class FiGameState extends edu.up.cs301.game.GameFramework.infoMessage.Gam
     }
 
     /** changeTurn */
-    public void changeTurn(FiGameState gamestate) {
+    public void changeTurn(FiGameState fiGameState) {
         // if playerTurn and then increment player turn
-        if (playerTurn == gamestate.getPlayerId()) {
+        if (playerTurn == fiGameState.getPlayerId()) {
             if(playerTurn == 1)
             {
                 playerTurn = 0;
             }
             if(playerTurn == 0)
             {
-                playerTurn = 1);
+                playerTurn = 1;
             }
         }
 
@@ -150,9 +151,32 @@ public class FiGameState extends edu.up.cs301.game.GameFramework.infoMessage.Gam
         }
     }
 
-    FiGameState firstInstance = new FiGameState();
+    /**
+     * Creates a new board and initializes the pieces of the board to the right spots
+     */
+    public void initBoard() {
+        int i = 0;
+        for (Tile.TileName tileName : Tile.TileName.values()) {
+            //System.out.println(tileName);
+            board[i] = new Tile(tileName);
+            i++;
 
-    //setter method
+        }
+
+
+        resetBoard();
+
+    }//initBoard
+
+    /**
+     * --- HELPER METHOD ---
+     * Empties out the board and puts each piece back to their "starting positions"
+     */
+    public void resetBoard() {
+
+    }
+
+    //setter methods
     public void setPlayerId(int playerId) {
         this.playerId = playerId;
     }
@@ -160,68 +184,10 @@ public class FiGameState extends edu.up.cs301.game.GameFramework.infoMessage.Gam
         this.floodMeter = floodMeter;
     }
 
-    public boolean shoreUp(int tile){
-        // if tile level is less than 5 or no actions
-        if( board[tile].getLevel() >= 5 || actionsRemaining <= 0){
-            return false;
-        }
-        else {
-            board[tile].setLevel( board[tile].getLevel() + 1 );
-            return true;
-        }
-    }
-
-    // need to set up another player
-    /** UNCOMMENT AND FIX LATER ===========================================
-     public boolean giveCard(int player){
-     if(check if move is illegal){
-     return false;
-     }
-     else{
-     //choose card from array, remove, and add to another player's hand array'
-     return true;
-     }
-     }
-     */
-    // finish captureTreasure need to setup four elements for tiles
-    /**
-     public void captureTreasure(int tile){
-     if(check if move is illegal){
-     return false;
-     }
-     else if(treasureCount == 4){
-     //remove all 4 treasure cards from player's deck
-     //move treasure to display on layout
-     treasureCount++;
-     return true;
-     }
-     }
-     ======================== UNCOMMENT AND FIX LATER    */
-
-
-    public boolean drawTreasure() {
-
-        // if player has 5 cards or max amount of this card distrbt.
-        if(humanPlayer.getNumberOfCardsInHand() >= 5){
-            return false;
-        }
-
-        else{
-            //hand.add(); add treasure card to array of your deck
-            humanPlayer.addCardToHand(1);
-            return true;
-        }
-    }
-    public boolean drawFlood(){
-        if(humanPlayer.getNumberOfCardsInHand() >= 5){
-            return false;
-        }
-        else{
-            //hand.add() add flood card to array of your deck hand
-            humanPlayer.addCardToHand(2);
-            return true;
-        }
-    } // end of moves
-
+    //getter methods
+    public int getPlayerId() {return this.playerId;}
+    public int getFloodMeter() {return this.floodMeter;}
+    public int getPlayerTurn() {return this.playerTurn;}
+    public Tile[] getBoard() {return board;}
 
 }
