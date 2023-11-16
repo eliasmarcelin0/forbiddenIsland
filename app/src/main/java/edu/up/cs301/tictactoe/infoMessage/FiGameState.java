@@ -39,7 +39,6 @@ public class FiGameState extends edu.up.cs301.game.GameFramework.infoMessage.Gam
         numWindStatueCards = 0;
         numOceanChaliceCards = 0;
         actionChoices = 1;
-        Pawn p1 = new Pawn();
 
         board = new Tile[24]; // Initialize board with all 24 places
 
@@ -61,7 +60,6 @@ public class FiGameState extends edu.up.cs301.game.GameFramework.infoMessage.Gam
         this.numWindStatueCards = other.numWindStatueCards;
         this.numOceanChaliceCards = other.numOceanChaliceCards;
         this.actionChoices = other.actionChoices;
-        this.p1 = other.p1;
 
         board = new Tile[24];
         for (int i = 0; i < 24; i++) {
@@ -70,10 +68,17 @@ public class FiGameState extends edu.up.cs301.game.GameFramework.infoMessage.Gam
     }
 
     /** changeTurn */
-    public void changeTurn() {
+    public void changeTurn(FiGameState gamestate) {
         // if playerTurn and then increment player turn
-        if (playerTurn == humanPlayer.getPlayerId()) {
-
+        if (playerTurn == gamestate.getPlayerId()) {
+            if(playerTurn == 1)
+            {
+                playerTurn = 0;
+            }
+            if(playerTurn == 0)
+            {
+                playerTurn = 1);
+            }
         }
 
     }
@@ -134,7 +139,15 @@ public class FiGameState extends edu.up.cs301.game.GameFramework.infoMessage.Gam
 
     }
     public void onClick(View view) {
-
+    FiGameState firstInstance = new FiGameState();
+        if(getPlayerId() == 0)
+        {
+            FiGameState secondInstance = new FiGameState(firstInstance);
+        }
+        else
+        {
+            firstInstance = firstInstance;
+        }
     }
 
     FiGameState firstInstance = new FiGameState();
