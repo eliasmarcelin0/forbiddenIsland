@@ -183,6 +183,30 @@ public class FiGameState extends edu.up.cs301.game.GameFramework.infoMessage.Gam
     public void setFloodMeter(int floodMeter) {
         this.floodMeter = floodMeter;
     }
+    public void setPlayerTurn(int turn){
+        this.playerTurn = turn;
+    }
+    public void setActionsRemaining(int remaining){
+        this.actionsRemaining = remaining;
+    }
+    public void setTreasureCount(int count){
+        this.treasureCount = count;
+    }
+    public void setNumEarthStoneCards(int earth){
+        this.numEarthStoneCards = earth;
+    }
+    public void setNumFireCrystalCards(int fire){
+        this.numFireCrystalCards = fire;
+    }
+    public void setNumWindStatueCards(int wind){
+        this.numWindStatueCards = wind;
+    }
+    public void setNumOceanChaliceCards(int ocean){
+        this.numOceanChaliceCards = ocean;
+    }
+    public void setActionChoices(int action){
+        this.actionChoices = action;
+    }
 
     //getter methods
     public int getPlayerId() {return this.playerId;}
