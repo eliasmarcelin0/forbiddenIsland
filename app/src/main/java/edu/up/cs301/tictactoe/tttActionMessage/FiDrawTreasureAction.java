@@ -16,7 +16,7 @@ public class FiDrawTreasureAction extends GameAction {
         super(player);
     }
 
-    /*public boolean drawTreasure(playerTurn){
+    public boolean drawTreasure(playerTurn){
         if(){
             return false;
         }
@@ -24,5 +24,5 @@ public class FiDrawTreasureAction extends GameAction {
             //hand.add(); add treasure card to array of your deck
             return true;
         }
-    }*/
+    }
 }

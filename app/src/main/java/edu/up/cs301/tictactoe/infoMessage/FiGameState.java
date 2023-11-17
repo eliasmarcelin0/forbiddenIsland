@@ -13,7 +13,7 @@ public class FiGameState extends edu.up.cs301.game.GameFramework.infoMessage.Gam
     Color playerPawn;
     int playerTurn;
 
-    private int playerId; // to use for moves
+    int playerId; // to use for moves
     int floodMeter;
     int actionsRemaining;
     int actionChoices;
@@ -183,11 +183,56 @@ public class FiGameState extends edu.up.cs301.game.GameFramework.infoMessage.Gam
     public void setFloodMeter(int floodMeter) {
         this.floodMeter = floodMeter;
     }
+    public void setPlayerTurn(int turn){
+        this.playerTurn = turn;
+    }
+    public void setActionsRemaining(int remaining){
+        this.actionsRemaining = remaining;
+    }
+    public void setTreasureCount(int count){
+        this.treasureCount = count;
+    }
+    public void setNumEarthStoneCards(int earth){
+        this.numEarthStoneCards = earth;
+    }
+    public void setNumFireCrystalCards(int fire){
+        this.numFireCrystalCards = fire;
+    }
+    public void setNumWindStatueCards(int wind){
+        this.numWindStatueCards = wind;
+    }
+    public void setNumOceanChaliceCards(int ocean){
+        this.numOceanChaliceCards = ocean;
+    }
+    public void setActionChoices(int action){
+        this.actionChoices = action;
+    }
 
     //getter methods
     public int getPlayerId() {return this.playerId;}
     public int getFloodMeter() {return this.floodMeter;}
     public int getPlayerTurn() {return this.playerTurn;}
+    public int getActionsRemaining(){
+        return this.actionsRemaining;
+    }
+    public int getTreasureCount(){
+        return this.treasureCount;
+    }
+    public int getNumEarthStoneCards(){
+        return this.numEarthStoneCards;
+    }
+    public int getNumFireCrystalCards(){
+        return this.numFireCrystalCards;
+    }
+    public int getNumWindStatueCards(){
+        return this.numWindStatueCards;
+    }
+    public int getNumOceanChaliceCards(){
+        return this.numOceanChaliceCards;
+    }
+    public int getActionChoices(){
+        return this.actionChoices;
+    }
     public Tile[] getBoard() {return board;}
 
 }
