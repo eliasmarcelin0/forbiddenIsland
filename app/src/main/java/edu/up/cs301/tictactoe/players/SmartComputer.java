@@ -19,6 +19,21 @@ public class SmartComputer extends GameComputerPlayer {
     protected void receiveInfo(GameInfo info) {
         if(info instanceof FiGameState){
             FiGameState gameState = (FiGameState) info;
+
+
+            /*
+            first always drawTreasure cards
+            check if ai has 4 of the same treasure cards in hand
+                if yes then check if the tile corresponds to the treasure cards in hand
+                    if yes capture treasure
+                    if no move to a different tile
+                if no then check if any other player has 3 of the same treasure cards in their hand and the ai also has that treasure card
+                    if yes give that treasure card to that player
+                    if no check if any adjacent tile is flooded
+                        if yes shore up and flip that tile to empty
+                        if no move to a random tile
+             last always drawFlood cards
+             */
         }
     }
 }
