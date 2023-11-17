@@ -188,6 +188,27 @@ public class FiGameState extends edu.up.cs301.game.GameFramework.infoMessage.Gam
     public int getPlayerId() {return this.playerId;}
     public int getFloodMeter() {return this.floodMeter;}
     public int getPlayerTurn() {return this.playerTurn;}
+    public int getActionsRemaining(){
+        return this.actionsRemaining;
+    }
+    public int getTreasureCount(){
+        return this.treasureCount;
+    }
+    public int getNumEarthStoneCards(){
+        return this.numEarthStoneCards;
+    }
+    public int getNumFireCrystalCards(){
+        return this.numFireCrystalCards;
+    }
+    public int getNumWindStatueCards(){
+        return this.numWindStatueCards;
+    }
+    public int getNumOceanChaliceCards(){
+        return this.numOceanChaliceCards;
+    }
+    public int getActionChoices(){
+        return this.actionChoices;
+    }
     public Tile[] getBoard() {return board;}
 
 }
