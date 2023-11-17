@@ -33,6 +33,7 @@ public class HumanPlayer extends GameHumanPlayer implements View.OnClickListener
     private int actionsRemaining; // player gets 3 moves
 
 
+    //declaring button objects
     private TextView floodViewTextView = null;
     private Button quitButton = null;
     private Button deckButton = null;
@@ -100,7 +101,7 @@ public class HumanPlayer extends GameHumanPlayer implements View.OnClickListener
         //layout resource for gui
         activity.setContentView(R.layout.fi_game_ui);
 
-        //intializing action buttons
+        //initializing action buttons
         this.floodViewTextView = (TextView)activity.findViewById(R.id.floodView);
         this.quitButton = (Button)activity.findViewById(R.id.quitButton);
         this.deckButton = (Button)activity.findViewById(R.id.deckButton);
@@ -110,7 +111,7 @@ public class HumanPlayer extends GameHumanPlayer implements View.OnClickListener
         this.shoreUpButton = (Button)activity.findViewById(R.id.shoreUpButton);
         this.discardButton = (Button)activity.findViewById(R.id.discardButton);
         this.captureTreasureButton = (Button)activity.findViewById(R.id.captureTreasureButton);
-        //intializing tile buttons
+        //initializing tile buttons
         this.FOOLS_LANDING = (Button)activity.findViewById(R.id.FOOLS_LANDING);
         this.BRONZE_GATE = (Button)activity.findViewById(R.id.BRONZE_GATE);
         this.GOLD_GATE = (Button)activity.findViewById(R.id.GOLD_GATE);
@@ -136,7 +137,7 @@ public class HumanPlayer extends GameHumanPlayer implements View.OnClickListener
         this.BREAKERS_BRIDGE = (Button)activity.findViewById(R.id.BREAKERS_BRIDGE);
         this.HOWLING_GARDEN = (Button)activity.findViewById(R.id.HOWLING_GARDEN);
 
-        //if an action button is pressed call the onClickListener method
+        //if an action button is pressed then call the onClickListener method
         quitButton.setOnClickListener(this);
         deckButton.setOnClickListener(this);
         drawTreasureButton.setOnClickListener(this);
@@ -162,6 +163,7 @@ public class HumanPlayer extends GameHumanPlayer implements View.OnClickListener
 
     @Override
     public void onClick(View button) {
+        //if the button's id that was clicked is equal to the blank button then decides what action to call
         if(button.getId() == R.id.quitButton){
             //game.sendAction(new GameOverAckAction(this));
         }

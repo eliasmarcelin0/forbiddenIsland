@@ -13,7 +13,7 @@ public class FiGameState extends edu.up.cs301.game.GameFramework.infoMessage.Gam
     Color playerPawn;
     int playerTurn;
 
-    private int playerId; // to use for moves
+    int playerId; // to use for moves
     int floodMeter;
     int actionsRemaining;
     int actionChoices;

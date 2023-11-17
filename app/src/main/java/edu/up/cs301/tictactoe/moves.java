@@ -35,17 +35,17 @@ public class moves extends FiGameState {
         }
     }
 
-    public boolean shoreUp(int tile){
+    public boolean shoreUp(int tile) {
         // if the shoreup is 5 or greater return or no actions
-        if(board[tile].getLevel() >= 5 || actionsRemaining < 1){
+        if (board[tile].getLevel() >= 5 || actionsRemaining < 1) {
             return false;
-        }
-        else {
-            board[tile].setLevel( board[tile].getLevel() + 1 );
+        } else {
+            board[tile].setLevel(board[tile].getLevel() + 1);
             return true;
+        }
     }
     // need to set up another player
-        
+
         public boolean giveCard(int player){
      if("check if move is illegal" == "fix this"){ 
         return false;
@@ -71,16 +71,15 @@ public class moves extends FiGameState {
      }
      */
 
-    public boolean drawTreasure(playerTurn) {
-
-        // if player has 5 cards or max amount of this card distrbt.
+    public boolean drawTreasure(){
+        // if player has 5 cards or max amount of this card discard.
         if(humanPlayer.getNumberOfCardsInHand() >= 5){
             return false;
         }
 
         else{
             //hand.add(); add treasure card to array of your deck
-            humanPlayer.addCardToHand(1);
+            humanPlayer.addCardToHand(2);
             return true;
         }
     } // end of drawTreasure
@@ -90,7 +89,7 @@ public class moves extends FiGameState {
         }
         else{
             //hand.add() add flood card to array of your deck hand
-            humanPlayer.addCardToHand(2);
+            humanPlayer.addCardToHand(getFloodMeter());
             return true;
         }
     } // end of drawFlood
