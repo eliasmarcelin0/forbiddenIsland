@@ -19,17 +19,12 @@ public class ForbiddenIslandGameFrameworkTest {
     public void addition_isCorrect() {
         assertEquals(4, 2 + 2);
     }
-
-
-
     @Test
     public void testToString() {
     }
-
     @Test
     public void initBoard() {
     }
-
     @Test
     public void resetBoard() {
         FiGameState fiGameState = new FiGameState();
@@ -41,7 +36,6 @@ public class ForbiddenIslandGameFrameworkTest {
    //         assertArrayEquals(board1[i], board2[i]);
         }
     }
-
     @Test
     public void movePieces() {
     }

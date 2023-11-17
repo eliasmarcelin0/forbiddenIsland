@@ -1,5 +1,6 @@
 package edu.up.cs301.tictactoe;
 
+import edu.up.cs301.game.GameFramework.players.GamePlayer;
 import edu.up.cs301.tictactoe.infoMessage.FiGameState;
 import edu.up.cs301.tictactoe.players.HumanPlayer;
 import edu.up.cs301.tictactoe.Tile;
@@ -93,5 +94,23 @@ public class moves extends FiGameState {
             return true;
         }
     } // end of drawFlood
+
+    public void FiCaptureTreasureAction(GamePlayer player) {
+
+    }
+
+    // finish captureTreasure need to setup four elements for tiles
+    /**
+     public void captureTreasure(int tile){
+     if(check if move is illegal){
+     return false;
+     }
+     else if(treasureCount == 4){
+     //remove all 4 treasure cards from player's deck
+     //move treasure to display on layout
+     treasureCount++;
+     return true;
+     }
+     }*/
 
 } // end of moves class
