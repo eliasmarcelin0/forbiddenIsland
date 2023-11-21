@@ -21,8 +21,13 @@ public class SmartComputer extends GameComputerPlayer {
             FiGameState gameState = (FiGameState) info;
             if(this.playerNum == gameState.getPlayerId()) {
                 while (gameState.getActionChoices() < 4) {
-                    if(gameState.)
-                    if(/*check if human player has 4 cards*/){
+                    if(/*check if holding 4 cards*/){
+                        if(/*check if cards are same*/){
+                            game.sendAction(/*draw treasure*/);
+                            gameState.setActionChoices(gameState.getActionChoices()+1);
+                        }
+                    }
+                    else if(/*check if human player has 4 cards*/){
                         if(/*check if cards are same*/){
                             if(/*check if card is in treasure deck*/) {
                                 game.sendAction(/*give card*/);
@@ -30,8 +35,7 @@ public class SmartComputer extends GameComputerPlayer {
                             }
                         }
                     }
-
-                    }
+                }
 
                                 /*
             first always drawTreasure cards
