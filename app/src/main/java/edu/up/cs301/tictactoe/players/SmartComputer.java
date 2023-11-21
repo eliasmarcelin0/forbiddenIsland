@@ -21,9 +21,17 @@ public class SmartComputer extends GameComputerPlayer {
             FiGameState gameState = (FiGameState) info;
             if(this.playerNum == gameState.getPlayerId()) {
                 while (gameState.getActionChoices() < 4) {
+                    if(gameState.getTreasureCount() == 4){
+                        //move towards fools landing tile
+                        gameState.setActionChoices(gameState.getActionChoices()+1);
+                    }
                     if(/*check if holding 4 cards*/){
                         if(/*check if cards are same*/){
                             game.sendAction(/*draw treasure*/);
+                            gameState.setActionChoices(gameState.getActionChoices()+1);
+                        }
+                        else if(gameState.getActionChoices() <4){
+                            //looks for and attempts to move towards tile with the card the hand has the most of
                             gameState.setActionChoices(gameState.getActionChoices()+1);
                         }
                     }
@@ -36,6 +44,7 @@ public class SmartComputer extends GameComputerPlayer {
                         }
                     }
                 }
+                game.sendAction(gameState.changeTurn(gameState);
 
                                 /*
             first always drawTreasure cards
