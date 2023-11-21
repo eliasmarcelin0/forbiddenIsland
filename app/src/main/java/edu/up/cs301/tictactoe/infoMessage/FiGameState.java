@@ -4,12 +4,14 @@ import android.graphics.Color;
 import android.view.View;
 import android.widget.Button;
 
+import java.util.ArrayList;
+
 import edu.up.cs301.tictactoe.Tile;
 import edu.up.cs301.tictactoe.players.HumanPlayer;
 
 public class FiGameState extends edu.up.cs301.game.GameFramework.infoMessage.GameState implements View.OnClickListener {
 
-    //instance variables  need to go over if we need all of them
+    //instance variables need to go over if we need all of them
     Color playerPawn;
     int playerTurn;
 
@@ -17,7 +19,13 @@ public class FiGameState extends edu.up.cs301.game.GameFramework.infoMessage.Gam
     int floodMeter;
     int actionsRemaining;
     int actionChoices;
-
+    private ArrayList<Integer> treasureDeck;
+    private ArrayList<Integer> discardTreasureDeck;
+    private ArrayList<Integer> floodDeck;
+    private ArrayList<Integer> discardFloodDeck;
+    private ArrayList<Integer> humanPlayerHand;
+    private ArrayList<Integer> dumbAiHand;
+    private ArrayList<Integer> smartAiHand;
     int treasureCount;
     int numEarthStoneCards;
     int numFireCrystalCards;
