@@ -10,4 +10,8 @@ public class FIButton extends Button {
     public FIButton(Context context) {
         super(context);
     }
+    /*give all the buttons coordinates so that in our action methods we can use the coordinates to
+    know where to move the pawn when we call the move method or so we know which button to flip over
+    when they want to shore up a tile
+     */
 }

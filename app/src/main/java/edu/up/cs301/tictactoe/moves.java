@@ -29,7 +29,6 @@ public class moves extends FiGameState {
                 pawn = board[tile].(below);
                 return true;
             }
-
         }
         else {
             return false;
