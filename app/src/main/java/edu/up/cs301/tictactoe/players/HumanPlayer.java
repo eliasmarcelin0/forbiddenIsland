@@ -78,6 +78,9 @@ public class HumanPlayer extends GameHumanPlayer implements View.OnClickListener
     public HumanPlayer(String name, int layoutId) {
         super(name);
         this.layoutId = layoutId;
+
+        // sets human players action to 3
+        this.actionsRemaining = 3;
     }
 
     @Override

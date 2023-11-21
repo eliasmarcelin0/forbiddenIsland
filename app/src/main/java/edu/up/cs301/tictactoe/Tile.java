@@ -19,9 +19,12 @@ public class Tile {
     public enum Value {
         EMPTY,
         FULL,
+    }//Value
+
+    public enum Water {
         FLOODED,
         SUNK,
-    }//Value
+    }
 
     // Enum for the names of the tiles
     public enum TileName {

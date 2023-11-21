@@ -30,6 +30,7 @@ public class ForbiddenIslandGameFrameworkTest {
         FiGameState fiGameState = new FiGameState();
         fiGameState.initBoard();
         Tile[] board1 = fiGameState.getBoard();
+        //putmoveor change omsething like shore level
         fiGameState.resetBoard();
         Tile[] board2 = fiGameState.getBoard();
         for(int i = 0; i < 8; i++) {

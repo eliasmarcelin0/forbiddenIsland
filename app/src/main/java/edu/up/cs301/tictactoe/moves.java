@@ -13,26 +13,20 @@ public class moves extends FiGameState {
     Tile[] board;
     private HumanPlayer humanPlayer; // player reference
 
+    private int actionsRemaining;
 
     /** game actions will probably make a new class for these moves */
-    public boolean move(int tile, FiGameState gamestate){
-        // check if tile is empty
-        if(board[tile].getTileName() != board[tile].getTileName())
-        {
-            if(board[tile].getTileName() = board[tile].(above))
-            {
-                pawn = board[tile].(above);
-                return true;
-            }
-            if(board[tile].getTileName() = board[tile].(below))
-            {
-                pawn = board[tile].(below);
-                return true;
-            }
+    public boolean move(int tile, FiGameState gamestate){//takes tile to move to
+        // check if tile is empty, if shore is up, and if actions are remaining
+        actionsRemaining = gamestate.getActionsRemaining();
+        if((board[tile].getValue() == Tile.Value.EMPTY) && (actionsRemaining > 0) && board[tile].getLevel() <= 0 ) {
+            // set Tile Equal to Full
+            board[tile].setValue(Tile.Value.FULL);
+            // Subtract actions remaining
+            gamestate.setActionsRemaining(actionsRemaining--);
+            return true;
         }
-        else {
-            return false;
-        }
+        return false;
     }
 
     public boolean shoreUp(int tile) {

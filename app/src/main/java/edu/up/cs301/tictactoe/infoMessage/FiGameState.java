@@ -17,7 +17,7 @@ public class FiGameState extends edu.up.cs301.game.GameFramework.infoMessage.Gam
 
     int playerId; // to use for moves
     int floodMeter;
-    int actionsRemaining;
+    public int actionsRemaining;
     int actionChoices;
     private ArrayList<Integer> treasureDeck;
     private ArrayList<Integer> discardTreasureDeck;
@@ -120,14 +120,6 @@ public class FiGameState extends edu.up.cs301.game.GameFramework.infoMessage.Gam
             switch (board[i].getValue()) {
                 case EMPTY: {
                     board1 = "Tile: Empty";
-                    break;
-                }
-                case FLOODED: {
-                    board1 = "Full";
-                    break;
-                }
-                case SUNK: {
-                    board1 = "Flooded";
                     break;
                 }
             }
