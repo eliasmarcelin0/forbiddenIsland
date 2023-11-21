@@ -1,9 +1,11 @@
 package edu.up.cs301.tictactoe.animation;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.widget.Button;
 
 //finds coordinates of the buttons
+@SuppressLint("AppCompatCustomView")
 public class FIButton extends Button {
     int x;
     int y;
