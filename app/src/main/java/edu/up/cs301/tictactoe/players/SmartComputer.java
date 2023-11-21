@@ -19,9 +19,21 @@ public class SmartComputer extends GameComputerPlayer {
     protected void receiveInfo(GameInfo info) {
         if(info instanceof FiGameState){
             FiGameState gameState = (FiGameState) info;
+            if(this.playerNum == gameState.getPlayerId()) {
+                while (gameState.getActionChoices() < 4) {
+                    if(gameState.)
+                    if(/*check if human player has 4 cards*/){
+                        if(/*check if cards are same*/){
+                            if(/*check if card is in treasure deck*/) {
+                                game.sendAction(/*give card*/);
+                                gameState.setActionChoices(gameState.getActionChoices()+1);
+                            }
+                        }
+                    }
 
+                    }
 
-            /*
+                                /*
             first always drawTreasure cards
             check if ai has 4 of the same treasure cards in hand
                 if yes then check if the tile corresponds to the treasure cards in hand
@@ -34,6 +46,8 @@ public class SmartComputer extends GameComputerPlayer {
                         if no move to a random tile
              last always drawFlood cards
              */
+                }
+            }
         }
     }
 }
